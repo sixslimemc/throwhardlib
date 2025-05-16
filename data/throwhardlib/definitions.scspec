@@ -6,13 +6,12 @@ pdata\PlayerData :< {
 }
 
 ForceSpec := {
-    add: bool
-    base? double
-    fling? {
-        multiplier: double
-        max? double
+    base: double
+    add_motion? {
+        original? bool
+        player? bool
     }
-    motion_transfer? {
+    fling? {
         multiplier: double
         max? double
     }
