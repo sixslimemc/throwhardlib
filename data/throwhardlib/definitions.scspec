@@ -1,10 +1,14 @@
 
 pdata\PlayerData :< {
     throwhardlib: {
-        last_rot: rotation
+        last_tick: PosRot
     }
 }
 
+PosRot := {
+    position: spaceVector
+    rotation: rotation
+}
 ForceSpec := {
     base: double
     add_motion? {

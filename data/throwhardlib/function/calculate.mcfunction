@@ -1,7 +1,7 @@
 #> throwhardlib : calculate
 #--------------------
-# -> current_rotation: rotation
-# -> last_rotation: rotation
+# -> current: PosRot
+# -> last_tick: PosRot
 # -> force: ForceSpec
 #--------------------
 # <- result: spaceVector
