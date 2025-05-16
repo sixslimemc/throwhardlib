@@ -1,8 +1,9 @@
 #> throwhardlib : calculate
 #--------------------
-# -> current: PosRot
+# -> this_tick: PosRot
 # -> last_tick: PosRot
 # -> force: ForceSpec
+# => add[]: spaceVector = []
 #--------------------
 # <- result: spaceVector
 #--------------------

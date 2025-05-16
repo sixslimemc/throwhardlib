@@ -11,10 +11,7 @@ PosRot := {
 }
 ForceSpec := {
     base: double
-    add_motion? {
-        original? bool
-        player? bool
-    }
+    transfer_player_motion: bool
     fling? {
         multiplier: double
         max? double
