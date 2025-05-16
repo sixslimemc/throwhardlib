@@ -1,0 +1,32 @@
+
+pdata\PlayerData :< {
+    throwhardlib: {
+        last_rot: rotation
+    }
+}
+
+ForceSpec := {
+    add: bool
+    base? double
+    fling? {
+        multiplier: double
+        max? double
+    }
+    motion_transfer? {
+        multiplier: double
+        max? double
+    }
+    variation? {
+        rotation? {
+            horizontal: FloatRange
+            vertical: FloatRange
+        }
+        magnitude? FloatRange
+    }
+    max? double
+}
+
+FloatRange := {
+    min: float
+    max: float
+}
