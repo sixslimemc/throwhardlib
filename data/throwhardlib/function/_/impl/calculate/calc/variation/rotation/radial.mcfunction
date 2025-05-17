@@ -12,6 +12,6 @@ execute store result storage six:in cast.rotation[0] float 0.001 run random valu
 function six:vector/cast
 
 data modify storage throwhardlib:_ v.calculate.rot_variations[1][0] set from storage six:out cast.result[0]
-data modify storage throwhardlib:_ v.calculate.rot_variations[1][1] set from storage six:out cast.result[1]
+data modify storage throwhardlib:_ v.calculate.rot_variations[1][1] set from storage six:out cast.result[2]
 
 scoreboard players set *calculate.did_rot_variation _throwhardlib 1

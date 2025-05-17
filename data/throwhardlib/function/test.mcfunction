@@ -1,6 +1,6 @@
 
 
-data modify storage throwhardlib:in calculate.force set value {base:5d, transfer_player_motion:false, variation:{rotation:{radial:{min:8, max:10}}}}
+data modify storage throwhardlib:in calculate.force set value {base:5d, transfer_player_motion:false, variation:{rotation:{radial:{min:-5, max:20}}}}
 data merge storage pdata:in {get:{path:'data.throwhardlib.last_tick'}}
 function pdata:self/get
 data modify storage throwhardlib:in calculate.last_tick set from storage pdata:out get.result

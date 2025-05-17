@@ -29,7 +29,9 @@ function six:vector/sum
 data modify storage throwhardlib:out calculate.result set from storage six:out sum.result
 
 #< RETURN : if vector is zero
-execute if data storage throwhardlib:out calculate{result:[0d, 0d, 0d]} run return 1
+data merge storage throwhardlib:_ {v:{calculate:{zero_check:[0d, 0d, 0d]}}}
+execute store result score *x _throwhardlib run data modify storage throwhardlib:_ v.calculate.zero_check set from storage throwhardlib:out calculate.result
+execute if score *x _throwhardlib matches 0 run return 1
 
 # cap max magnitude:
 execute if data storage throwhardlib:in calculate.force.max run function throwhardlib:_/impl/calculate/calc/max
