@@ -45,5 +45,11 @@ execute if score *calculate.did_rot_variation _throwhardlib matches 1 run functi
 # variation of {..magnitude}:
 execute if data storage throwhardlib:in calculate.force.variation.magnitude run function throwhardlib:_/impl/calculate/calc/variation/magnitude
 
+# final vector:
+data modify storage six:in cast.rotation set from storage throwhardlib:_ v.calculate.direction
+data modify storage six:in cast.magnitude set from storage throwhardlib:_ v.calculate.magnitude
+function six:vector/cast
+
+data modify storage throwhardlib:out calculate.result set from storage six:out cast.result
+
 scoreboard players reset *calculate.did_rot_variation _throwhardlib
-scoreboard players reset *calculate.did_mag_variation _throwhardlib
