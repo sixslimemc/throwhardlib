@@ -11,6 +11,9 @@ function throwhardlib:_/impl/calculate/calc/base
 # fling vector:
 execute if data storage throwhardlib:in calculate.force.fling run function throwhardlib:_/impl/calculate/calc/fling
 
+# player motion vector:
+execute if data storage throwhardlib:in calculate.force{transfer_player_motion:true} run function throwhardlib:_/impl/calculate/calc/player_motion
+
 # sum vectors to {@out result}:
 data modify storage six:in sum.vectors set from storage throwhardlib:_ v.calculate.adds
 function six:vector/sum
