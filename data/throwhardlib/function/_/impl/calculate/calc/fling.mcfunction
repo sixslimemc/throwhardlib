@@ -20,9 +20,6 @@ data modify storage six:in subtract.a set from storage six:out cast.result
 data modify storage six:in subtract.b set from storage throwhardlib:_ v.calculate.fling_source
 function six:vector/subtract
 
-# DEBUG:
-tellraw @a ["fling: ", {'storage':'six:out', 'nbt':'subtract.result'}]
-
 #< RETURN : if no {@in max}:
 execute unless data storage throwhardlib:in calculate.force.fling.max run return run data modify storage throwhardlib:_ v.calculate.adds append from storage six:out subtract.result
 
@@ -44,3 +41,4 @@ data modify storage six:in rescale.magnitude set from storage throwhardlib:in ca
 function six:vector/rescale
 
 data modify storage throwhardlib:_ v.calculate.adds append from storage six:out rescale.result
+

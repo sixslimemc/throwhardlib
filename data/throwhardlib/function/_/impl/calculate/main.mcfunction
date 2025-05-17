@@ -8,11 +8,20 @@ data modify storage throwhardlib:_ v.calculate.adds set from storage throwhardli
 # base vector:
 function throwhardlib:_/impl/calculate/calc/base
 
+# DEBUG:
+tellraw @a ["base: ", {'storage':'throwhardlib:_', 'nbt':'v.calculate.adds[-1]', color:aqua}]
+
 # fling vector:
 execute if data storage throwhardlib:in calculate.force.fling run function throwhardlib:_/impl/calculate/calc/fling
 
+# DEBUG:
+execute if data storage throwhardlib:in calculate.force.fling run tellraw @a ["fling: ", {'storage':'throwhardlib:_', 'nbt':'v.calculate.adds[-1]', color:yellow}]
+
 # player motion vector:
 execute if data storage throwhardlib:in calculate.force{transfer_player_motion:true} run function throwhardlib:_/impl/calculate/calc/player_motion
+
+# DEBUG:
+execute if data storage throwhardlib:in calculate.force{transfer_player_motion:true} run tellraw @a ["motion: ", {'storage':'throwhardlib:_', 'nbt':'v.calculate.adds[-1]', color:gold}]
 
 # sum vectors to {@out result}:
 data modify storage six:in sum.vectors set from storage throwhardlib:_ v.calculate.adds
