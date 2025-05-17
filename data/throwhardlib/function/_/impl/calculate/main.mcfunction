@@ -24,3 +24,7 @@ execute if data storage throwhardlib:in calculate.force.max run function throwha
 
 #< RETURN : if no variation
 execute unless data storage throwhardlib:in calculate.force.variation run return 1
+
+data modify storage six:in direction_of.vector set from storage throwhard:out calculate.result
+function six:vector/direction_of
+data modify storage throwhard:_ c.calculate.rotation set from storage six:out direction_of.result
