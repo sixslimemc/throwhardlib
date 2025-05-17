@@ -24,4 +24,3 @@ execute if data storage throwhardlib:in calculate.force.max run function throwha
 
 #< RETURN : if no variation
 execute unless data storage throwhardlib:in calculate.force.variation run return 1
-
