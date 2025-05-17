@@ -37,7 +37,10 @@ function six:vector/cast
 
 data modify storage throwhardlib:_ v.calculate.adds append from storage six:out cast.result
 
+# RETURN
 return 1
+
+# ==[DEPRICATED]==
 
 #< RETURN : if no {@in max}:
 execute unless data storage throwhardlib:in calculate.force.fling.max run return run data modify storage throwhardlib:_ v.calculate.adds append from storage six:out subtract.result
