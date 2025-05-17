@@ -18,8 +18,9 @@ ForceSpec := {
     }
     variation? {
         rotation? {
-            horizontal: FloatRange
-            vertical: FloatRange
+            horizontal? FloatRange
+            vertical? FloatRange
+            radial? FloatRange
         }
         magnitude? FloatRange
     }
