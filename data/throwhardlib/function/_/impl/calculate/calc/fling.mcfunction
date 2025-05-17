@@ -20,6 +20,25 @@ data modify storage six:in subtract.a set from storage six:out cast.result
 data modify storage six:in subtract.b set from storage throwhardlib:_ v.calculate.fling_source
 function six:vector/subtract
 
+# magnitude:
+data modify storage six:in magnitude.vector set from storage six:out subtract.result
+function six:vector/magnitude
+
+# cap at max:
+data modify storage six:in min.a set from storage six:out magnitude.result
+data modify storage six:in min.b set from storage throwhardlib:in calculate.force.fling.max
+execute unless data storage throwhardlib:in calculate.force.fling.max run data modify storage six:in min.b set from storage six:out magnitude.result
+function six:decimal/min
+
+# make vector:
+data modify storage six:in cast.magnitude set from storage six:out min.result
+data modify storage six:in cast.rotation set from storage throwhardlib:in calculate.this_tick.rotation
+function six:vector/cast
+
+data modify storage throwhardlib:_ v.calculate.adds append from storage six:out cast.result
+
+return 1
+
 #< RETURN : if no {@in max}:
 execute unless data storage throwhardlib:in calculate.force.fling.max run return run data modify storage throwhardlib:_ v.calculate.adds append from storage six:out subtract.result
 
