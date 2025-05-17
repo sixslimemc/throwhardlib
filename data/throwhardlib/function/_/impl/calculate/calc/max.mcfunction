@@ -11,7 +11,7 @@ data modify storage six:in min.a set from storage six:out magnitude.result
 data modify storage six:in min.b set from storage throwhardlib:in calculate.force.max
 execute store result score *x _throwhardlib run function six:decimal/min
 
-# RETURN : if magnitude is not above max
+#< RETURN : if magnitude is not above max
 execute if score *x _throwhardlib matches 1 run return 1
 
 # rescale to max magnitude:

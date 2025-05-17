@@ -23,7 +23,7 @@ function six:vector/subtract
 # DEBUG:
 tellraw @a ["fling: ", {'storage':'six:out', 'nbt':'subtract.result'}]
 
-# RETURN : if no {@in max}:
+#< RETURN : if no {@in max}:
 execute unless data storage throwhardlib:in calculate.force.fling.max run return run data modify storage throwhardlib:_ v.calculate.adds append from storage six:out subtract.result
 
 data modify storage throwhardlib:_ v.calculate.fling set from storage six:out subtract.result
@@ -35,7 +35,7 @@ data modify storage six:in min.a set from storage six:out magnitude.result
 data modify storage six:in min.b set from storage throwhardlib:in calculate.force.fling.max
 execute store result score *x _throwhardlib run function six:decimal/min
 
-# RETURN : if magnitude is not above max:
+#< RETURN : if magnitude is not above max:
 execute if score *x _throwhardlib matches 1 run data modify storage throwhardlib:_ v.calculate.adds append from storage throwhardlib:_ c.calculate.fling
 
 # rescale to max magnitude:
