@@ -33,11 +33,17 @@ data modify storage six:in magnitude.vector set from storage throwhardlib:out ca
 function six:vector/magnitude
 data modify storage throwhardlib:_ v.calculate.magnitude set from storage six:out magnitude.result
 
-# variation of {..direction}:
+# populate {..rot_variations}:
 data merge storage throwhardlib:_ {v:{calculate:{rot_variations:[[0d, 0d, 0d], [0d, 0d, 0d]]}}}
 execute if data storage throwhardlib:in calculate.force.variation.rotation.horizontal run function throwhardlib:_/impl/calculate/calc/variation/rotation/horizontal
 execute if data storage throwhardlib:in calculate.force.variation.rotation.vertical run function throwhardlib:_/impl/calculate/calc/variation/rotation/vertical
 execute if data storage throwhardlib:in calculate.force.variation.rotation.radial run function throwhardlib:_/impl/calculate/calc/variation/rotation/radial
 
+# change {..direction} if rotation variations made:
+execute if score *calculate.did_rot_variation _throwhardlib matches 1 run function throwhardlib:_/impl/calculate/variate_rotation
+
 # variation of {..magnitude}:
 execute if data storage throwhardlib:in calculate.force.variation.magnitude run function throwhardlib:_/impl/calculate/calc/variation/magnitude
+
+scoreboard players reset *calculate.did_rot_variation _throwhardlib
+scoreboard players reset *calculate.did_mag_variation _throwhardlib
