@@ -36,7 +36,7 @@ data modify storage six:in min.b set from storage throwhardlib:in calculate.forc
 execute store result score *x _throwhardlib run function six:decimal/min
 
 #< RETURN : if magnitude is not above max:
-execute if score *x _throwhardlib matches 1 run data modify storage throwhardlib:_ v.calculate.adds append from storage throwhardlib:_ c.calculate.fling
+execute if score *x _throwhardlib matches 1 run data modify storage throwhardlib:_ v.calculate.adds append from storage throwhardlib:_ v.calculate.fling
 
 # rescale to max magnitude:
 data modify storage six:in rescale.vector set from storage throwhardlib:_ v.calculate.fling
