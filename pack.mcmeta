@@ -1,10 +1,8 @@
 {
 	"pack": {
-		"description": "",
-		"pack_format": 81,
-		"supported_formats": {
-			"min_inclusive": 71,
-			"max_inclusive": 81
-		}
+		"pack_format": 88,
+		"description": "TODO",
+		"min_format": [88, 0],
+		"max_format": [88, 0]
 	}
 }
